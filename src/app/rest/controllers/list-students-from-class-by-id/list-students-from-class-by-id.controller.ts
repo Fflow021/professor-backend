@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get, Header, HttpCode, HttpStatus, Param } from '@nestjs/common';
 import { StudentResponseBody } from './list-students-from-class-by-id.types';
 import { ListStudentsFromClassByIdUsecaseFactory } from '../../../../infra/factories/usecases/list-students-from-class-by-id.usecase.factory';
@@ -13,7 +14,7 @@ export class ListStudentsFromClassByIdController {
   async execute(@Param('id') classId: string): Promise<StudentResponseBody[]> {
     const usecase = this.usecaseFactory.getInstance();
 
-    const students = await usecase.execute({ classId });
+    const students:ListStudentsFromClassByIdPortResult = await usecase.execute({ classId });
 
     return this.mapToResponseBody(students);
   }
