@@ -18,8 +18,8 @@ export class UpdateStudentStatusByIdController {
       studentId: id,
       aulasLecionadas: input.aulasLecionadas,
       aulasAtendidas: input.aulasAtendidas,
-      notaP1: input.notasP1,
-      notaP2: input.notasP2,
+      notaP1: input.notaP1,
+      notaP2: input.notaP2,
     });
 
     return this.mapToResponseBody(student);

@@ -1,6 +1,6 @@
 export interface input {
   aulasLecionadas: number;
   aulasAtendidas: number;
-  notasP1: number;
-  notasP2: number;
+  notaP1: number;
+  notaP2: number;
 }

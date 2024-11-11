@@ -7,7 +7,7 @@ export class EvaluateThenUpdateStudentUsecase {
     constructor(private readonly updateStudentStatusPort: UpdateStudentStatusPort) {}
 
     async execute({studentId, aulasLecionadas, aulasAtendidas, notaP1, notaP2}: ToBeEvaluatedStudent):Promise<student> {
-        const media = notaP1 + notaP2 / 2
+        const media = (notaP1 + notaP2) / 2
         const frequencia = aulasAtendidas / aulasLecionadas
 
         let newStatus: string = 'NAO_AVALIADO'
@@ -15,10 +15,10 @@ export class EvaluateThenUpdateStudentUsecase {
             newStatus = 'REPROVADO'
         } else if (media > 7.0 && frequencia > 0.75) {
             newStatus = 'APROVADO'
-        } else if (media >= 5.0 && media < 7.0 && frequencia < 0.75) {
+        } else if ((media >= 5.0 && media < 7.0) && frequencia < 0.75) {
             newStatus = 'EM_EXAME'
         }
-        
+
         const newStudent = await this.updateStudentStatusPort.execute({studentId, newStatus})
         return newStudent
     }    
