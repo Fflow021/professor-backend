@@ -1,3 +1,4 @@
+import { EvaluateThenUpdateStudentByIdUsecaseFactory } from './factories/usecases/evaluate-then-update-student-by-id.usecase.factory';
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -18,12 +19,14 @@ import { CheckClassStatusUsecaseFactory } from './factories/usecases/check-class
     ListProfessorClassesByFilterUsecaseFactory,
     ListStudentsFromClassByIdUsecaseFactory,
     CheckClassStatusUsecaseFactory,
+    EvaluateThenUpdateStudentByIdUsecaseFactory,
   ],
   providers: [
     // Usecases
     ListProfessorClassesByFilterUsecaseFactory,
     ListStudentsFromClassByIdUsecaseFactory,
     CheckClassStatusUsecaseFactory,
+    EvaluateThenUpdateStudentByIdUsecaseFactory,
 
     // Ports
     ListProfessorClassesByFilterPortFactory,
