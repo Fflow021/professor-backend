@@ -21,6 +21,7 @@ export class UpdateStudentStatusByIdController {
       notaP1: input.notasP1,
       notaP2: input.notasP2,
     });
+
     return this.mapToResponseBody(student);
   }
 
