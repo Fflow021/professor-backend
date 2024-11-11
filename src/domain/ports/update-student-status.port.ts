@@ -8,4 +8,4 @@ export interface UpdateStudentStatusPortInput {
 
 export type UpdateStudentStatusPortResult = Student;
 
-export type UpdateStudentStatusPort = Action<UpdateStudentStatusPortInput, Promise<UpdateStudentStatusPortResult>>;
+export type UpdateStudentStatusPort = Action<UpdateStudentStatusPortInput, Promise<UpdateStudentStatusPortResult>>; // this is implemented by mongoose adapter
